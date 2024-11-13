@@ -6,7 +6,7 @@ let articleAIMessage, articleText
 //Obiekt ze wszystkimi promptami użytkownika
 
 const promtps = {
-    readArticle: "Use proper HTML tags in the article provided below. You should also include img tags with src 'image_placeholder.jpg', set their alt that includes a proposition on the image that will be generated (a prompt for the AI), and create some titles below the images. I personally think the images should be placed below the article's main title, and another one just under 'Wyzwania etyczne i społeczne'. Could include a few more. Return the ready HTML code. The article is as follows: "
+    readArticle: "Use proper HTML tags in the article provided below. You should also include img tags with src 'image_placeholder.jpg', set their alt that includes a proposition on the image that will be generated (a prompt for the AI), and create some titles below the images. Image titles should be wrapped in the <h3> tag and written in Polish. I personally think the images should be placed below the article's main title, and another one just under 'Wyzwania etyczne i społeczne'. Could include a few more. The last paragraph should be a footer. Return the ready HTML code. The article is as follows: "
 }
 
 //Obiekt ze wszystkimi promptami systemowymi
@@ -66,7 +66,8 @@ const firstArticleGeneration = async () => {
     
 
     if(!generatedArticle.ok){
-        console.error("there was an error generating the article" + generatedArticle.status)
+        console.error("there was an error generating the article " + generatedArticle.status)
+        return
     }
 
     articleAIMessage = await generatedArticle.json()
