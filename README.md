@@ -37,6 +37,7 @@ Przejdź do folderu repozytorium w terminalu
 ```bash
 cd ./oxido_zadanie
 ```
+Pamiętaj o podmianie "MIEJSCE_NA_KLUCZ_OPENAI" na faktyczny klucz API w pliku [server.js](https://github.com/Wodzu2137/oxido_zadanie/blob/main/server.js)
 
 Uruchom skrypt
 
